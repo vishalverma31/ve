@@ -12,7 +12,7 @@
   <script src="https://use.fontawesome.com/034feea29c.js"></script>
   <style>
   body {
-    background-image: url("cool-background.jpg");
+    background-image: url("resources/cool-background.jpg");
   }
   #div { 
     background-color:#fafaf2;
@@ -35,7 +35,7 @@
 <nav class="navbar navbar-default">
 <div class="container-fuild">
   <div class="navbar-header">
-    <a class="navbar-brand" href="#"><img src="logo.png" alt="VE" height="30" class="img-rounded"></img></a>
+    <a class="navbar-brand" href="#"><img src="resources/logo.png" alt="VE" height="30" class="img-rounded"></img></a>
   </div>
   <ul class="nav navbar-nav">
     <li><a href="home"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a></li>

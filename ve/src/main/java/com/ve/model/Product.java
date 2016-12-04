@@ -1,17 +1,21 @@
-package model;
+package com.ve.model;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
 public class Product {
+	@Id
 	private int productId;
 	private String productName;
 	private String category;
 	private double price;
 	
-	public Product(int productId, String productName, String category, double price) {
+	public Product(/*int productId, String productName, String category, double price*/) {
 		super();
-		this.productId = productId;
-		this.productName = productName;
-		this.category = category;
-		this.price = price;
+/*		this.productId=productId;
+		this.productName=productName;
+		this.category=category;
+		this.price=price;*/
 	}
 	
 	public int getProductId() {
@@ -38,5 +42,4 @@ public class Product {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-
 }

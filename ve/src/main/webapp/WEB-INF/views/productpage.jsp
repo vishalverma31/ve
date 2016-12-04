@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,13 +23,15 @@ angular.module("productApp",[])
 });
 
 </script>
-
 <div ng-app="productApp" ng-controller="productController"> 
+
+<input type="text" ng-model="search" />
+<br/>
   <table>
     <thead>
       <tr>
-        <th ng-click="sort('productName')">Product ID</th>
-        <th ng-click="sort('brand')">Product Name</th>
+        <th ng-click="sort('productId')">Product ID</th>
+        <th ng-click="sort('productName')">Product Name</th>
         <th ng-click="sort('price')">Price</th>
         <th ng-click="sort('category')">Category</th>
         <th></th>
@@ -38,7 +39,7 @@ angular.module("productApp",[])
     </thead>
     <tbody>
       
-	  <tr ng-repeat="product in prodData">
+	  <tr ng-repeat="product in prodData | filter:search | orderBy: sortKey : reverse">
         <td>{{product.productId}}</td>
         <td>{{product.productName}}</td>
         <td>{{product.price}}</td>
@@ -52,5 +53,6 @@ angular.module("productApp",[])
   </table>
   </div>
 </div>
+
 </body>
 </html>
