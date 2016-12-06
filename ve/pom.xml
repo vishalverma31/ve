@@ -36,36 +36,58 @@
     <version>2.8.0</version>
     </dependency>
     
-    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+    <!-- https://mvnrepository.com/artifact/jstl/jstl -->
     <dependency>
-    <groupId>org.hibernate</groupId>
-    <artifactId>hibernate-core</artifactId>
-    <version>5.2.4.Final</version>
+    <groupId>jstl</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
     </dependency>
     
-    <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+    <!-- Backend -->
     <dependency>
-    <groupId>com.h2database</groupId>
-    <artifactId>h2</artifactId>
-    <version>1.4.193</version>
+    <groupId>com.ve</groupId>
+    <artifactId>veBackend</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     </dependency>
     
-    <!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+    <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
     <dependency>
-    <groupId>commons-dbcp</groupId>
-    <artifactId>commons-dbcp</artifactId>
-    <version>1.4</version>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>3.0.1</version>
     </dependency>
     
-    <!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
-    <dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-orm</artifactId>
-    <version>4.3.3.RELEASE</version>
-    </dependency>
         
   </dependencies>
   <build>
-    <finalName>ve</finalName>
+    <pluginManagement>
+  <plugins>
+  <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.2</version>
+                    <configuration>
+                        <source>1.6</source>
+                        <target>1.6</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>2.4</version>
+                    <configuration>
+                        <warSourceDirectory>src/main/webapp</warSourceDirectory>
+                        <warName>crudappfrontendannotation</warName>
+                        <failOnMissingWebXml>false</failOnMissingWebXml>
+                    </configuration>
+                </plugin>
+  
+  
+  </plugins>
+  
+  
+  </pluginManagement>
+    
+  <finalName>ve</finalName>
   </build>
 </project>

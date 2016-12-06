@@ -1,0 +1,3 @@
+com\ve\veBackend\dao\productDAO.class
+com\ve\veBackend\dao\productDAOImpl.class
+com\ve\veBackend\config\AppContext.class

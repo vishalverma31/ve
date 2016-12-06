@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
-import com.ve.dao.productDAOImpl;
-import com.ve.model.Product;
-import com.ve.dao.productDAO;
+import com.ve.veBackend.dao.productDAOImpl;
+import com.ve.veBackend.model.Product;
+import com.ve.veBackend.dao.productDAO;
 
 
 
