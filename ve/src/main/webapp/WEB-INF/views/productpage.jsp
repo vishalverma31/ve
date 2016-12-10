@@ -31,9 +31,11 @@ angular.module("productApp",[])
     <thead>
       <tr>
         <th ng-click="sort('productId')">Product ID</th>
+        <th ng-click="sort('brand')">Product Brand</th>
         <th ng-click="sort('productName')">Product Name</th>
         <th ng-click="sort('price')">Price</th>
         <th ng-click="sort('category')">Category</th>
+        <th ng-click="sort('description')">Product Description</th>
         <th></th>
       </tr>
     </thead>
@@ -41,9 +43,11 @@ angular.module("productApp",[])
       
 	  <tr ng-repeat="product in prodData | filter:search | orderBy: sortKey : reverse">
         <td>{{product.productId}}</td>
+        <td>{{product.brand}}</td>
         <td>{{product.productName}}</td>
         <td>{{product.price}}</td>
         <td>{{product.category}}</td>
+        <td>{{product.description}}</td>
   
       </tr>
 	  
@@ -54,5 +58,4 @@ angular.module("productApp",[])
   </div>
 </div>
 
-</body>
-</html>
+<%@ include file="template/Footer.jsp" %>

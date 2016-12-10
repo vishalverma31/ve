@@ -22,7 +22,7 @@ public class AppContext {
 	{
 		BasicDataSource dataSource=new BasicDataSource();
 		dataSource.setDriverClassName("org.h2.Driver");
-		dataSource.setUrl("jdbc:h2:tcp://localhost/~/db");
+		dataSource.setUrl("jdbc:h2:tcp://localhost/~/mydb");
 		dataSource.setUsername("sa");
 		dataSource.setPassword("");
 		

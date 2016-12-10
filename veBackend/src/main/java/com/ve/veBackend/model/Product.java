@@ -1,8 +1,11 @@
 package com.ve.veBackend.model;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 public class Product {
@@ -12,7 +15,11 @@ public class Product {
 	private String productName;
 	private String category;
 	private String description;
+	private String brand;
 	private double price;
+	
+	@Transient
+	private MultipartFile image;
 	
 	public Product() {
 		super();
@@ -49,5 +56,19 @@ public class Product {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+	public MultipartFile getImage() {
+		return image;
+	}
+	public void setImage(MultipartFile image) {
+		this.image = image;
 	}
 }
