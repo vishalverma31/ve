@@ -1,6 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ page session="false"%>
+<%@ page isELIgnored="false" %>
 <html>
 <head>
   <title>Register_Page</title>
@@ -61,68 +63,75 @@
 </div>
 </nav>
 
+<c:url var="addAction" value="/register/add" ></c:url>
+
 <!-- Middle Content -->
 <div class="container" id="div">
   <h2 align="center">V Electronics</h2>
   <p align="center">Please enter your details carefully:</p>
-  <form class="form-horizontal">
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="rname">Name: </label>
-	  <div class="col-xs-10">
-	  <input type="text" class="form-control" id="rname" placeholder="Enter user name">
-	  </div>
-    </div>
-	
-	<div class="form-group">
-      <label class="control-label col-sm-2" for="remail">Email Id: </label>
-      <div class="col-xs-10">
-	  <input type="text" class="form-control" id="remail" placeholder="Enter Email Id">
-	  </div>	
-    </div>
-	
-	<div class="form-group">
-      <label class="control-label col-sm-2" for="rno">Mobile No: </label>
-      <div class="col-xs-10">
-	  <input type="text" class="form-control" id="rno" placeholder="Enter Mobile No.">
-	  </div>
-    </div>
-	
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="rpwd">Password: </label>
-	  <div class="col-xs-10">
-	  <input type="password" class="form-control" id="rpwd"  placeholder="Enter Password">
-	  </div>
-    </div>
-	
-	<div class="form-group">
-      <label class="control-label col-sm-2" for="cpwd">Confirm Password: </label>
-	  <div class="col-xs-10">
-	  <input type="password" class="form-control" id="cpwd"  placeholder="Confirm Password">
-	  </div>
-    </div>
-	  <button type="button" class="btn btn-primary btn-sm btn-block">Register</button>
-   
- </form>
+  <form:form action="${addAction}" commandName="person">
+  <table>
+	<tr>
+		<td>
+			<form:label path="name">
+				<spring:message text="Name:"/>
+			</form:label>
+		</td>
+		<td>
+			<form:input path="name" />
+		</td> 
+	</tr>
+	<tr>
+		<td>
+			<form:label path="email">
+				<spring:message text="Email Address:"/>
+			</form:label>
+		</td>
+		<td>
+			<form:input path="email" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<form:label path="number">
+				<spring:message text="Mobile No.:"/>
+			</form:label>
+		</td>
+		<td>
+			<form:input path="number" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<form:label path="pass">
+				<spring:message text="Password:"/>
+			</form:label>
+		</td>
+		<td>
+			<form:input path="pass" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<form:label path="cpass">
+				<spring:message text="Confirm Password:"/>
+			</form:label>
+		</td>
+		<td>
+			<form:input path="cpass" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<c:if test="${empty person.name}">
+				<input type="submit"
+					value="<spring:message text="Register"/>" />
+			</c:if>
+		</td>
+	</tr>
+</table>	
+</form:form>
 </div>
 
 <!-- Footer -->
-<footer class="footer" id="footer">
-   <div class="container">
-     <div class="row">
-        <div class="col-sm-6">
-           <span class="copyright text-inverse">Copyright © V Electronics Inc. 2016</span>
-        </div>
-        <div class="col-sm-6">
-            <div class="row">
-              <div class="col-md-12 hidden-xs text-right">
-                <a href="#"><i class="fa fa-2x fa-fw fa-instagram text-inverse"></i></a>
-                <a href="#"><i class="fa fa-2x fa-fw fa-twitter text-inverse"></i></a>
-                <a href="#"><i class="fa fa-2x fa-fw fa-facebook text-inverse"></i></a>
-              </div>
-            </div>
-        </div>
-      </div>		
-    </div>
-</footer>
-</body>
-</html>
+<%@ include file="template/Footer.jsp" %>

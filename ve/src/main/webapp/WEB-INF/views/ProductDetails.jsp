@@ -1,3 +1,6 @@
+<html>
+<head>
+  <title>Product_Details</title>
 <%@ include file="template/Header.jsp" %>
 
 

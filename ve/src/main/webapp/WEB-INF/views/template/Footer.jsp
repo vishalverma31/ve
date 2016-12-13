@@ -3,7 +3,7 @@
    <div class="container">
      <div class="row">
         <div class="col-sm-6">
-           <span class="copyright text-inverse">Copyright © V Electronics Inc. 2016</span>
+           <span class="copyright text-inverse"><h4>Copyright © V Electronics Inc. 2016</h4></span>
         </div>
         <div class="col-sm-6">
             <div class="row">
@@ -17,5 +17,6 @@
       </div>		
     </div>
 </footer>
+
 </body>
 </html>

@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Person {
@@ -11,10 +14,13 @@ public class Person {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	@NotEmpty(message="Name field can't be empty")
 	private String name;
 	private String email;
+	@Size(min=10,max=10,message="Mobile No. has to be of 10 digits")
 	private String number;
 	private String address;
+	@Size(min=6,max=18,message="Password has to be between 6 to 18 characters")
 	private String password;
 	private String role;
 	private Boolean enabled;

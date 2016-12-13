@@ -1,3 +1,7 @@
+<html>
+<head>
+  <title>About Us</title>
+
 <%@ include file="template/Header.jsp" %>
 
 

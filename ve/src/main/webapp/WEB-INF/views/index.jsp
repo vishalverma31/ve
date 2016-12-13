@@ -14,16 +14,18 @@
   .carousel-inner > .item > img,
   .carousel-inner > .tem > a > img{  height:267px; width:856px; }
   #footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 45px;
   background-color:black;
   }
+  #div1{ background-color:#fafaf2;}
   </style>
 </head>
 <body>
+
 <!-- Top Navigation Bar -->
 <nav class="navbar navbar-default navbar-fixed-top">
 <div class="container-fuild">
@@ -96,9 +98,27 @@
 </div>
 
 <!-- Youtube Video-->
-<div class="container-fluid" align="right">
-<iframe width="420" height="150" src="https://www.youtube.com/embed/Q6dsRpVyyWs">
-</iframe>
+<div class="container">
+<div class="row">
+  <div class="col-sm-8" id="div1">
+   <h3>100% Secure Payment{All Credit and Debit Cards Accepted}</h3>
+   <h3>100% Payment Protection</h3>
+   <h3>Easy Return Policy</h3>
+  </div>
+  <div class="col-sm-4"><iframe width="420" height="150" src="https://www.youtube.com/embed/Q6dsRpVyyWs">
+   </iframe>
+  </div>
 </div>
 
+<br>
+
+  <div class="row">
+  <div class="col-sm-3"><img src="resources/cspeaker.JPG" class="img-circle" alt="Speakers" width="230" height="180"></div>
+  <div class="col-sm-3"><img src="resources/cwatch.JPG" class="img-circle" alt="Watch" width="230" height="180"></div>
+  <div class="col-sm-3"><img src="resources/ctv.JPG" class="img-circle" alt="TV" width="230" height="180"></div>
+  <div class="col-sm-3"><img src="resources/claptop.JPG" class="img-circle" alt="Laptop" width="230" height="180"></div>
+   </div>
+</div>
+
+<!-- Footer -->
 <%@ include file="template/Footer.jsp" %>

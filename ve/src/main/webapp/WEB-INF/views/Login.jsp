@@ -64,16 +64,16 @@
  <div class="container-fluid" align="center" id="div">
   <h2 align="center" style"color:white">V Electronics</h2>
   <p align="center-left" style"color:white">Login to your user profile:</p>
-  <form style="width: 200px">
+  <form action="login" method="POST" style="width: 200px">
     <div class="form-group">
-      <label for="usr">User Name:</label>
-      <input type="text" class="form-control" id="usr">
+      <label for="name">User Name:</label>
+      <input type="text" class="form-control" id="name">
     </div>
     <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd">
+      <label for="password">Password:</label>
+      <input type="password" class="form-control" id="password">
     </div>
-	  <button type="button" class="btn btn-primary btn-sm btn-block">Submit</button>
+	  <button type="button" value="Login" class="btn btn-primary btn-sm btn-block">Submit</button>
       
  </form>
 </div>
