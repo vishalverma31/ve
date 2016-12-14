@@ -66,14 +66,14 @@
   <p align="center-left" style"color:white">Login to your user profile:</p>
   <form action="login" method="POST" style="width: 200px">
     <div class="form-group">
-      <label for="name">User Name:</label>
-      <input type="text" class="form-control" id="name">
+      <label for="username">User Name:</label>
+      <input type="text" class="form-control" id="username" name="username">
     </div>
     <div class="form-group">
       <label for="password">Password:</label>
-      <input type="password" class="form-control" id="password">
+      <input type="password" class="form-control" id="password" name="password">
     </div>
-	  <button type="button" value="Login" class="btn btn-primary btn-sm btn-block">Submit</button>
+	  <input type="submit" value="Login" class="btn btn-primary btn-sm btn-block"></button>
       
  </form>
 </div>

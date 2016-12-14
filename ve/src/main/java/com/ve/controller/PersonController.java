@@ -36,6 +36,7 @@ public class PersonController {
     @RequestMapping(value= "/register/add", method = RequestMethod.POST)
 	public String addregisterPerson(@ModelAttribute("person") Person person,HttpServletRequest request)
 	{
+    	        
 				person.setAddress(null);	
 		        person.setEnabled(true);
 			    person.setRole("ROLE_USER");

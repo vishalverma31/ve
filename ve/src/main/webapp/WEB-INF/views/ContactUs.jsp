@@ -2,7 +2,8 @@
 <head>
   <title>Contact Us</title>
 
-<%@ include file="template/Header.jsp" %>
+</head>
+<body>
 
-
-<%@ include file="template/Footer.jsp" %>
+</body>
+</html>

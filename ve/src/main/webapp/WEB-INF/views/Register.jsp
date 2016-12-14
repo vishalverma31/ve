@@ -63,13 +63,13 @@
 </div>
 </nav>
 
-<c:url var="addAction" value="/register/add" ></c:url>
+
 
 <!-- Middle Content -->
 <div class="container" id="div">
   <h2 align="center">V Electronics</h2>
   <p align="center">Please enter your details carefully:</p>
-  <form:form action="${addAction}" commandName="person">
+  <form:form action="<c:url value="/register/add"></c:url>" commandName="person">
   <table>
 	<tr>
 		<td>
@@ -103,12 +103,12 @@
 	</tr>
 	<tr>
 		<td>
-			<form:label path="pass">
+			<form:label path="password">
 				<spring:message text="Password:"/>
 			</form:label>
 		</td>
 		<td>
-			<form:input path="pass" />
+			<form:input path="password" />
 		</td>
 	</tr>
 	<tr>
@@ -129,7 +129,7 @@
 			</c:if>
 		</td>
 	</tr>
-</table>	
+   </table>	
 </form:form>
 </div>
 
