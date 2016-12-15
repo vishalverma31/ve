@@ -3,10 +3,12 @@ package com.ve.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,17 +35,34 @@ public class PersonController {
 		return model;
 	}
     
-    @RequestMapping(value= "/register/add", method = RequestMethod.POST)
-	public String addregisterPerson(@ModelAttribute("person") Person person,HttpServletRequest request)
+    @RequestMapping(value="/register",method=RequestMethod.GET)
+	 public String register(@Valid @ModelAttribute("rperson") Person person,BindingResult result,HttpServletRequest request)
+    {
+        if(result.hasErrors()){
+        	return "Register";
+        }  	 
+        else{
+        	personDAO.addPerson(person);
+			return "redirect:/login";
+    	
+        }
+    }
+    
+    @RequestMapping(value= "/addregister", method = RequestMethod.POST)
+	public String addregisterPerson(@Valid @ModelAttribute("rperson") Person person,HttpServletRequest request)
 	{
-    	        
-				person.setAddress(null);	
+    		  
+    
+				
+    			person.setAddress(null);	
 		        person.setEnabled(true);
 			    person.setRole("ROLE_USER");
 				personDAO.addPerson(person);
-			
-
-			return "redirect:/login";
+				return "redirect:/login";
+				
+         
+    	     		
+    	 
 		
 	}
 	@RequestMapping(value= "/person/add", method = RequestMethod.POST)

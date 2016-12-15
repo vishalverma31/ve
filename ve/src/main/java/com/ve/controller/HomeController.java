@@ -27,11 +27,6 @@ public class HomeController {
 	   	 return "login";
 	     }
 		 
-	     @RequestMapping(value="/register",method=RequestMethod.GET)
-		 public String register(){
-	   	 return "Register";
-	     }
-	    
 	     @RequestMapping("/AboutUs")
 		 public String AboutUs(){
 	   	 return "AboutUs";

@@ -22,7 +22,10 @@ public class PersonDAOImpl implements PersonDAO{
 
 	public void addPerson(Person p) {
 		Session session=sessionFactory.getCurrentSession();
-		session.persist(p);
+		p.setAddress(null);	
+        p.setEnabled(true);
+	    p.setRole("ROLE_USER");
+		session.saveOrUpdate(p);
 		
 	}
 

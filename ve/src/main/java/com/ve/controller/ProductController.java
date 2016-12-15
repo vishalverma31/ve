@@ -27,7 +27,6 @@ public class ProductController {
 	 	String productList=new Gson().toJson(products);
 	 	ModelAndView model=new ModelAndView("productpage");
 	 	model.addObject("productList", productList);
-	 	
 	 	return model;
 		
 	 }

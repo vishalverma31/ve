@@ -14,14 +14,6 @@ public class App
     {
        AbstractApplicationContext context=new AnnotationConfigApplicationContext(AppContext.class);
        
-       productDAO productDAO=(productDAO)context.getBean("productDAO");
-       
-       Product product=new Product();
-       product.setProductName("Nikon D700");
-	   product.setPrice(105000);
-	   product.setCategory("Camera");
-		
-	   productDAO.addProduct(product);       
        
        
        

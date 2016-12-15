@@ -73,7 +73,7 @@
       <label for="password">Password:</label>
       <input type="password" class="form-control" id="password" name="password">
     </div>
-	  <input type="submit" value="Login" class="btn btn-primary btn-sm btn-block"></button>
+	  <input type="submit" value="Login" class="btn btn-primary btn-sm btn-block">
       
  </form>
 </div>

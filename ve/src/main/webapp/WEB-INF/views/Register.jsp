@@ -66,71 +66,66 @@
 
 
 <!-- Middle Content -->
+<script>
+function validate_form(thisform)
+{
+with (thisform)
+  {
+      if (pass.value != cpass.value) { 
+    	   alert("Your password and confirmation password do not match.");
+    	   cpassword.focus();
+    	   return false; 
+    	}
+  }
+} 
+</script>
+
+
 <div class="container" id="div">
   <h2 align="center">V Electronics</h2>
   <p align="center">Please enter your details carefully:</p>
-  <form:form action="<c:url value="/register/add"></c:url>" commandName="person">
-  <table>
-	<tr>
-		<td>
-			<form:label path="name">
-				<spring:message text="Name:"/>
-			</form:label>
-		</td>
-		<td>
-			<form:input path="name" />
-		</td> 
-	</tr>
-	<tr>
-		<td>
-			<form:label path="email">
-				<spring:message text="Email Address:"/>
-			</form:label>
-		</td>
-		<td>
-			<form:input path="email" />
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<form:label path="number">
-				<spring:message text="Mobile No.:"/>
-			</form:label>
-		</td>
-		<td>
-			<form:input path="number" />
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<form:label path="password">
-				<spring:message text="Password:"/>
-			</form:label>
-		</td>
-		<td>
-			<form:input path="password" />
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<form:label path="cpass">
-				<spring:message text="Confirm Password:"/>
-			</form:label>
-		</td>
-		<td>
-			<form:input path="cpass" />
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2">
-			<c:if test="${empty person.name}">
-				<input type="submit"
-					value="<spring:message text="Register"/>" />
-			</c:if>
-		</td>
-	</tr>
-   </table>	
-</form:form>
+  <form:form action="Register" modelAttribute="rperson" class="form-horizontal">
+    <div class="form-group">
+      <form:label class="control-label col-sm-2" path="name" for="name">Name: </form:label>
+	  <div class="col-xs-10">
+	  <form:input type="text" class="form-control" path="name" id="name" placeholder="Enter your name"></form:input>
+	  <form:errors path="name"></form:errors>
+	  </div>
+    </div>
+	
+	<div class="form-group">
+      <form:label class="control-label col-sm-2" path="email" for="email">Email Address: </form:label>
+      <div class="col-xs-10">
+	  <form:input type="text" class="form-control" path="email" id="email" placeholder="Enter Email Id"></form:input>
+	  <form:errors path="email"></form:errors>
+	  </div>	
+    </div>
+	
+	<div class="form-group">
+      <form:label class="control-label col-sm-2" path="number" for="number">Mobile No: </form:label>
+      <div class="col-xs-10">
+	  <form:input type="text" class="form-control" path="number" id="number" placeholder="Enter Mobile No." />
+	  <form:errors path="number"></form:errors>
+	  </div>
+    </div>
+	
+    <div class="form-group">
+      <form:label class="control-label col-sm-2" path="password" for="password">Password: </form:label>
+	  <div class="col-xs-10">
+	  <form:input type="password" class="form-control" path="password" name="pass" id="password"  placeholder="Enter Password" />
+	  <form:errors path="password"></form:errors>
+	  </div>
+    </div>
+	
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="cpwd">Confirm Password: </label>
+	  <div class="col-xs-10">
+	  <input type="password" class="form-control" id="cpwd" name="cpass" placeholder="Confirm Password"/>
+	  </div>
+    </div>
+	  <input type="submit" class="btn btn-primary btn-sm btn-block" value="Register" />
+   
+    </form:form>
 </div>
 
 <!-- Footer -->
