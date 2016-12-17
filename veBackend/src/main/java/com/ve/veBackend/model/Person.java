@@ -1,9 +1,12 @@
 package com.ve.veBackend.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -24,9 +27,16 @@ public class Person {
 	private String password;
 	private String role;
 	private Boolean enabled;
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="cartId")
+	private Cart cart;
 	
-	
-	
+	public Cart getCart() {
+		return cart;
+	}
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
 	public String getEmail() {
 		return email;
 	}

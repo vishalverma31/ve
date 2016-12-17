@@ -1,4 +1,4 @@
-package com.ve.veBackend.dao;
+package com.ve.veBackend.DAOImpl;
 
 import java.util.List;
 
@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.ve.veBackend.dao.PersonDAO;
+import com.ve.veBackend.model.Cart;
 import com.ve.veBackend.model.Person;
 
 
@@ -25,7 +27,12 @@ public class PersonDAOImpl implements PersonDAO{
 		p.setAddress(null);	
         p.setEnabled(true);
 	    p.setRole("ROLE_USER");
-		session.saveOrUpdate(p);
+	    
+	    Cart cart=new Cart();
+	    cart.setPerson(p);
+	    p.setCart(cart);
+		
+	    session.saveOrUpdate(p);
 		
 	}
 

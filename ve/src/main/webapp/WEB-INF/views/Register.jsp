@@ -84,7 +84,7 @@ with (thisform)
 <div class="container" id="div">
   <h2 align="center">V Electronics</h2>
   <p align="center">Please enter your details carefully:</p>
-  <form:form action="Register" modelAttribute="rperson" class="form-horizontal">
+  <form:form action="register" modelAttribute="person" class="form-horizontal">
     <div class="form-group">
       <form:label class="control-label col-sm-2" path="name" for="name">Name: </form:label>
 	  <div class="col-xs-10">

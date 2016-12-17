@@ -42,6 +42,8 @@ public class HomeController {
 	   	 return "ProductDetails";
 	     }
 	     
+	     
+	     
 	     @RequestMapping(value="/authfailure",method=RequestMethod.GET)
 	 	 public String accessDeniedPage()
 	 	 {

@@ -12,7 +12,7 @@ import java.io.FileOutputStream;
 
 import com.google.gson.Gson;
 import com.ve.veBackend.dao.productDAO;
-import com.ve.veBackend.dao.productDAOImpl;
+import com.ve.veBackend.DAOImpl.productDAOImpl;
 import com.ve.veBackend.model.Product;
 
 @Controller

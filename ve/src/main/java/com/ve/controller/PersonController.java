@@ -35,8 +35,8 @@ public class PersonController {
 		return model;
 	}
     
-    @RequestMapping(value="/register",method=RequestMethod.GET)
-	 public String register(@Valid @ModelAttribute("rperson") Person person,BindingResult result,HttpServletRequest request)
+     @RequestMapping("/register")
+	 public String register(@Valid @ModelAttribute("person") Person person,BindingResult result,HttpServletRequest request)
     {
         if(result.hasErrors()){
         	return "Register";
@@ -46,25 +46,10 @@ public class PersonController {
 			return "redirect:/login";
     	
         }
+        
     }
     
-    @RequestMapping(value= "/addregister", method = RequestMethod.POST)
-	public String addregisterPerson(@Valid @ModelAttribute("rperson") Person person,HttpServletRequest request)
-	{
-    		  
     
-				
-    			person.setAddress(null);	
-		        person.setEnabled(true);
-			    person.setRole("ROLE_USER");
-				personDAO.addPerson(person);
-				return "redirect:/login";
-				
-         
-    	     		
-    	 
-		
-	}
 	@RequestMapping(value= "/person/add", method = RequestMethod.POST)
 	public String addPerson(@ModelAttribute("person") Person person,HttpServletRequest request)
 	{

@@ -1,4 +1,4 @@
-package com.ve.veBackend.dao;
+package com.ve.veBackend.DAOImpl;
 
 import java.util.List;
 
@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import com.ve.veBackend.dao.productDAO;
 import com.ve.veBackend.model.Product;
 
 
@@ -45,6 +47,13 @@ public class productDAOImpl implements productDAO{
 	public void deleteProduct(Product product) {
 		Session session=sessionFactory.getCurrentSession();
 		session.delete(product);
+		
+	}
+
+	public List<Product> getAllProductsByCategory(String category) {
+		Session session=sessionFactory.getCurrentSession();
+		List<Product> products=session.createQuery("from Product where category="+category).getResultList();
+		return products;
 		
 	}
 
