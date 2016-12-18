@@ -6,22 +6,24 @@
 <html>
 <head>
 	<title>Admin Page</title>
-	<style type="text/css">
-		.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
-		.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
-		.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
-		.tg .tg-4eph{background-color:#f9f9f9}
-	</style>
-</head>
-<body>
+<%@ include file="template/Header.jsp" %>
+
+
+	
+	
+
+<!-- Admin Person Part -->
+<br>
+<br>
+<br>
+<div class="container">
+<div class="row"  id="div1">
+   <div class="col-sm-4">
 <h1>
 	Add a Person
 </h1>
 
 <c:url var="addAction" value="/person/add" ></c:url>
-
-
-
 
 <form:form action="${addAction}" commandName="person">
 <table>
@@ -51,7 +53,7 @@
 	<tr>
 		<td>
 			<form:label path="email">
-				<spring:message text="email"/>
+				<spring:message text="Email"/>
 			</form:label>
 		</td>
 		<td>
@@ -61,7 +63,7 @@
 	<tr>
 		<td>
 			<form:label path="number">
-				<spring:message text="number"/>
+				<spring:message text="Number"/>
 			</form:label>
 		</td>
 		<td>
@@ -71,7 +73,7 @@
 	<tr>
 		<td>
 			<form:label path="role">
-				<spring:message text="role"/>
+				<spring:message text="Role"/>
 			</form:label>
 		</td>
 		<td>
@@ -93,6 +95,8 @@
 </table>	
 </form:form>
 <br>
+</div>
+<div class="col-sm-8">
 <h3>Persons List</h3>
 <c:if test="${!empty listPersons}">
 	<table class="tg">
@@ -118,5 +122,173 @@
 	</c:forEach>
 	</table>
 </c:if>
+</div>
+</div>
+</div>
+
+<!-- Admin Product Part -->
+<br>
+<br>
+<div class="container"  id="div1">
+
+<h1>
+	Add Product
+</h1>
+
+<c:url var="addProduct" value="/product/add" ></c:url>
+
+
+
+<form:form action="${addProduct}" modelAttribute="product" enctype="multipart/form-data">
+
+
+
+<table>
+	<c:if test="${!empty product.productName}">
+	<tr>
+		<td>
+			<form:label path="productId">
+				<spring:message text="ID"/>
+			</form:label>
+		</td>
+		<td>
+			<form:input path="productId" readonly="true" size="8"  disabled="true" />
+			<form:hidden path="productId" />
+		</td> 
+	</tr>
+	</c:if>
+	<tr>
+		<td>
+			<form:label path="brand">
+				<spring:message text="Brand"/>
+			</form:label>
+		</td>
+		<td>
+			<form:input path="brand" />
+			<form:errors path="brand"></form:errors>
+		</td> 
+	</tr>
+	<tr>
+		<td>
+			<form:label path="productName">
+				<spring:message text="Name"/>
+			</form:label>
+		</td>
+		<td>
+			<form:input path="productName" />
+			<form:errors path="productName"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<form:label path="price">
+				<spring:message text="Price"/>
+			</form:label>
+		</td>
+		<td>
+			<form:input path="price" />
+			<form:errors path="price"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<form:label path="category">
+				<spring:message text="Category"/>
+			</form:label>
+		</td>
+		<td>
+			<form:input path="category" />
+			<form:errors path="category"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<form:label path="description">
+				<spring:message text="Description"/>
+			</form:label>
+		</td>
+		<td>
+			<form:input path="description" />
+			<form:errors path="description"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<form:label path="image">
+				<spring:message text="Image"/>
+			</form:label>
+		</td>
+		<td>
+			<form:input type="file" path="image" />
+			<form:errors path="image"/>
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td colspan="2">
+			<c:if test="${!empty product.productName}">
+				<input type="submit"
+					value="<spring:message text="Edit Product"/>" />
+			</c:if>
+			<c:if test="${empty product.productName}">
+				<input type="submit"
+					value="<spring:message text="Add Product"/>" />
+			</c:if>
+		</td>
+	</tr>
+</table>	
+</form:form>
+<h3>Product List</h3>
+<c:if test="${!empty listProducts}">
+	<table class="tg">
+	<tr>
+		<th width="80">Product ID</th>
+		<th width="80">Brand</th>
+		<th width="120">Product Name</th>
+		<th width="80">Price</th>
+		<th width="120">Category</th>
+		<th width="120">Description</th>
+		<th width="60">Edit</th>
+		<th width="60">Delete</th>
+	</tr>
+	<c:forEach items="${listProducts}" var="product">
+		<tr>
+			<td>${product.productId}</td>
+			<td>${product.brand}</td>
+			<td>${product.productName}</td>
+			<td>${product.price}</td>
+			<td>${product.category}</td>
+			<td>${product.description}</td>
+			<td><a href="<c:url value='/edit/${product.productId}' />" >Edit</a></td>
+			<td><a href="<c:url value='/remove/${product.productId}' />" >Delete</a></td>
+		</tr>
+	</c:forEach>
+	</table>
+</c:if>
+<br>
+</div>
+<br>
+<!-- Footer -->
+<footer class="footer" id="footer1">
+   <div class="container">
+     <div class="row">
+        <div class="col-sm-6">
+           <span class="copyright text-inverse"><h4>Copyright © V Electronics Inc. 2016</h4></span>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+              <div class="col-md-12 hidden-xs text-right">
+                <a href="#"><i class="fa fa-2x fa-fw fa-instagram text-inverse"></i></a>
+                <a href="#"><i class="fa fa-2x fa-fw fa-twitter text-inverse"></i></a>
+                <a href="#"><i class="fa fa-2x fa-fw fa-facebook text-inverse"></i></a>
+              </div>
+            </div>
+        </div>
+      </div>		
+    </div>
+</footer>
+
 </body>
 </html>

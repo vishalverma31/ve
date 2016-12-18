@@ -1,4 +1,3 @@
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -17,19 +16,6 @@
   height: 45px;
   background-color:black;
   }
-  #footer1 {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 45px;
-  background-color:black;
-  }
-  #div1{ background-color:#fafaf2;}
-  .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
-  .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
-  .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
-  .tg .tg-4eph{background-color:#f9f9f9}
   </style>
 </head>
 <body>
@@ -63,3 +49,6 @@
   </ul>
 </div>
 </nav>
+
+</body>
+</html>

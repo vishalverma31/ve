@@ -44,8 +44,9 @@ public class productDAOImpl implements productDAO{
 		
 	}
 
-	public void deleteProduct(Product product) {
+	public void deleteProduct(int productId) {
 		Session session=sessionFactory.getCurrentSession();
+		Product product=(Product)session.createQuery("from Product where productId="+productId).getSingleResult();
 		session.delete(product);
 		
 	}

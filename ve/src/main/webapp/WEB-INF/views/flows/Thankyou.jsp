@@ -5,8 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Thank You</title>
-</head>
-<body>
+<%@ include file="Head.jsp" %>
 
-</body>
-</html>
+
+<%@ include file="Foot.jsp" %>

@@ -37,6 +37,7 @@ public class WebConfig extends WebMvcConfigurerAdapter{
 	public void addResourceHandlers(final ResourceHandlerRegistry registry) {
 	    registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 	    registry.addResourceHandler("/template/**").addResourceLocations("/WEB-INF/views/template/");
+	    
 	}
 }
 

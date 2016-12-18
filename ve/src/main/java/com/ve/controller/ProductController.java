@@ -31,31 +31,5 @@ public class ProductController {
 		
 	 }
 	 
-	    @RequestMapping("/add")
-		public String addProduct()
-		{
-			Product product=new Product();
-			product.setProductName("Nikon D700");
-			product.setPrice(105000);
-			product.setCategory("Camera");
-			productDAO.addProduct(product);
-			return "redirect:/productpage";
-		}
-		
-		@RequestMapping("/delete")
-		public String deleteProduct()
-		{
-			Product product=productDAO.getProductById(1);
-			productDAO.deleteProduct(product);
-			return "redirect:/productpage";
-		}
-		
-		@RequestMapping("/update")
-		public String updateProduct()
-		{
-			Product product=productDAO.getProductById(0);
-			product.setPrice(110000);
-			productDAO.updateProduct(product);
-			return "redirect:/productpage";
-		}
+	    
 }

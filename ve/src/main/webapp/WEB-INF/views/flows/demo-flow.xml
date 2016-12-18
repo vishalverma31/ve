@@ -3,15 +3,19 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow
     http://www.springframework.org/schema/webflow/spring-webflow.xsd">
 
-	<view-state id="page1" view="Address.jsp">
+	<view-state id="page1" view="CartPage.jsp">
 		<transition on="event1" to="page2"></transition>
 	</view-state>
 	
-	<view-state id="page2" view="Confirmation.jsp">
-	<transition on="event2" to="page3"></transition>
+	<view-state id="page2" view="Address.jsp">
+		<transition on="event2" to="page3"></transition>
 	</view-state>
 	
-	<view-state id="page3" view="Thankyou.jsp">
+	<view-state id="page3" view="Confirmation.jsp">
+	<transition on="event3" to="page4"></transition>
+	</view-state>
+	
+	<view-state id="page4" view="Thankyou.jsp">
 		
 	</view-state>
 

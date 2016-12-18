@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Confirmation Page</title>
+<title>Cart</title>
 <%@ include file="Head.jsp" %>
 
 
