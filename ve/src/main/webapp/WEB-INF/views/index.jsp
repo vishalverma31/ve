@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored="false" %>
 <html>
 <head>
   <title>Landing Page</title>
@@ -36,15 +38,16 @@
     <li><a href="home"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a></li>
     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-product-hunt fa-fw" aria-hidden="true"></i>&nbsp; Products <span class="caret"> </span></a>
       <ul class="dropdown-menu">
-       <li class="dropdown-header">Portable Devices:</li>
-        <li><a href="productpage">Laptops</a></li>
-        <li><a href="#">Portable Speakers</a></li>
-        <li><a href="#">Ipod</a></li>
-        <li><a href="#">Wearables</a></li>
+        <li><a href="<c:url value='/productpage/All' />">All</a></li> 
+        <li class="dropdown-header">Portable Devices:</li>
+        <li><a href="<c:url value='/productpage/Laptop' />">Laptops</a></li>
+        <li><a href="<c:url value='/productpage/Speaker' />">Portable Speakers</a></li>
+        <li><a href="<c:url value='/productpage/Ipod' />">Ipod</a></li>
+        <li><a href="<c:url value='/productpage/Wearables' />">Wearables</a></li>
         <li class="divider"></li>
         <li class="dropdown-header">TV</li>
-        <li><a href="#">Full HD</a></li> 
-        <li><a href="#">Ultra HD</a></li>   
+        <li><a href="<c:url value='/productpage/Full HD TV' />">Full HD</a></li> 
+        <li><a href="<c:url value='/productpage/Ultra HD TV' />">Ultra HD</a></li>   
        </ul>
     </li>
     <li><a href="AboutUs"><i class="fa fa-users fa-fw" aria-hidden="true"></i>&nbsp; About us</a></li>

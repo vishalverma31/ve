@@ -30,7 +30,6 @@ public class WebConfig extends WebMvcConfigurerAdapter{
 	public CommonsMultipartResolver getMultipartResolver()
 	{
 		CommonsMultipartResolver multipartResolver=new CommonsMultipartResolver();
-		
 		return multipartResolver;
 	}
 	

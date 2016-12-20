@@ -51,9 +51,9 @@ public class productDAOImpl implements productDAO{
 		
 	}
 
-	public List<Product> getAllProductsByCategory(String category) {
+	public List<Product> getAllProductsByCategory(String Category) {
 		Session session=sessionFactory.getCurrentSession();
-		List<Product> products=session.createQuery("from Product where category="+category).getResultList();
+		List<Product> products=session.createQuery("from Product where category='"+Category+"'").getResultList();
 		return products;
 		
 	}
