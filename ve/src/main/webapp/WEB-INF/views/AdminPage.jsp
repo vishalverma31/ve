@@ -1,3 +1,4 @@
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
@@ -23,9 +24,9 @@
 	Add a Person
 </h1>
 
-<c:url var="addAction" value="/person/add" ></c:url>
+<c:url var="AddPerson" value='/person/add' />
 
-<form:form action="${addAction}" commandName="person">
+<form:form action="${AddPerson}" modelAttribute="person">
 <table>
 	<c:if test="${!empty person.name}">
 	<tr>
@@ -135,11 +136,11 @@
 	Add Product
 </h1>
 
-<c:url var="addProduct" value="/product/add" ></c:url>
 
 
+<c:url var="AddProduct" value='/product/add' />
 
-<form:form action="${addProduct}" modelAttribute="product" enctype="multipart/form-data">
+<form:form action="${AddProduct}" modelAttribute="product" enctype="multipart/form-data">
 
 
 
@@ -261,8 +262,8 @@
 			<td>${product.price}</td>
 			<td>${product.category}</td>
 			<td>${product.description}</td>
-			<td><a href="<c:url value='/edit/${product.productId}' />" >Edit</a></td>
-			<td><a href="<c:url value='/remove/${product.productId}' />" >Delete</a></td>
+			<td><a href="<c:url value='/editProduct/${product.productId}' />" >Edit</a></td>
+			<td><a href="<c:url value='/removeProduct/${product.productId}' />" >Delete</a></td>
 		</tr>
 	</c:forEach>
 	</table>

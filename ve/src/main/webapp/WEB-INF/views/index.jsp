@@ -1,3 +1,4 @@
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page isELIgnored="false" %>
 <html>
@@ -53,10 +54,17 @@
     <li><a href="AboutUs"><i class="fa fa-users fa-fw" aria-hidden="true"></i>&nbsp; About us</a></li>
     <li><a href="ContactUs"><i class="fa fa-mobile fa-fw" aria-hidden="true"></i>&nbsp; Contact us</a></li>  
   </ul>
+  <sec:authorize access="isAuthenticated()">
+  <ul class="nav navbar-nav navbar-right">
+      <li><a href="logout"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
+      </ul>
+  </sec:authorize>
+  <sec:authorize access="isAnonymous()">
   <ul class="nav navbar-nav navbar-right">
       <li><a href="login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
       <li><a href="register"><span class="glyphicon glyphicon-log-in"></span> Sign Up </a></li>
   </ul>
+  </sec:authorize>
 </div>
 </nav>
 

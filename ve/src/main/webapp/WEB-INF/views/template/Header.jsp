@@ -41,7 +41,7 @@
     <a class="navbar-brand" href="#"><img src="<c:url value='/resources/logo.png"' /> alt="VE" height="30" class="img-rounded"></img></a>
   </div>
   <ul class="nav navbar-nav">
-    <li><a href="home"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a></li>
+    <li><a href="<c:url value='/home' />"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a></li>
     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-product-hunt fa-fw" aria-hidden="true"></i>&nbsp; Products <span class="caret"> </span></a>
       <ul class="dropdown-menu">
         <li><a href="<c:url value='/productpage/All' />">All</a></li> 
@@ -56,12 +56,19 @@
         <li><a href="<c:url value='/productpage/Ultra HD TV' />">Ultra HD</a></li>   
        </ul>
     </li>
-    <li><a href="AboutUs"><i class="fa fa-users fa-fw" aria-hidden="true"></i>&nbsp; About us</a></li>
-    <li><a href="ContactUs"><i class="fa fa-mobile fa-fw" aria-hidden="true"></i>&nbsp; Contact us</a></li>  
+    <li><a href="<c:url value='/AboutUs' />"><i class="fa fa-users fa-fw" aria-hidden="true"></i>&nbsp; About us</a></li>
+    <li><a href="<c:url value='/ContactUs' />"><i class="fa fa-mobile fa-fw" aria-hidden="true"></i>&nbsp; Contact us</a></li>  
   </ul>
+  <sec:authorize access="isAuthenticated()">
   <ul class="nav navbar-nav navbar-right">
-      <li><a href="login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
-      <li><a href="register"><span class="glyphicon glyphicon-log-in"></span> Sign Up </a></li>
+      <li><a href="<c:url value='/logout' />"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
+      </ul>
+  </sec:authorize>
+  <sec:authorize access="isAnonymous()">
+  <ul class="nav navbar-nav navbar-right">
+      <li><a href="<c:url value='/login' />"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+      <li><a href="<c:url value='/register' />"><span class="glyphicon glyphicon-log-in"></span> Sign Up </a></li>
   </ul>
+  </sec:authorize>
 </div>
 </nav>

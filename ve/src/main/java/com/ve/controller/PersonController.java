@@ -86,6 +86,10 @@ public class PersonController {
 	@RequestMapping("/edit/{id}")
 	public String editPerson(@PathVariable("id") int id, Model model)
 	{
+		List<Product> listProducts=pDAO.getAllProducts();
+		model.addAttribute("product",new Product());
+		model.addAttribute("listProducts", listProducts);
+		
 		model.addAttribute("person", personDAO.getPersonById(id));
         model.addAttribute("listPersons", personDAO.listPersons());
         return "AdminPage";
@@ -143,6 +147,10 @@ public class PersonController {
 	@RequestMapping("/editProduct/{productId}")
 	public String editProduct(@PathVariable("productId") int Pid, Model model)
 	{
+		List<Person> listPersons=personDAO.listPersons();
+		model.addAttribute("person",new Person());
+		model.addAttribute("listPersons", listPersons);
+		
 		model.addAttribute("product", pDAO.getProductById(Pid));
         model.addAttribute("listProducts", pDAO.getAllProducts());
         return "AdminPage";

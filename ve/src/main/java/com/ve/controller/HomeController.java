@@ -11,11 +11,11 @@ import com.ve.veBackend.model.Person;
 @Controller
 public class HomeController {
 	
-	@RequestMapping("/")
-	public String home() 
-	{
-  	   return "index";
-	}
+	     @RequestMapping("/")
+	     public String home() 
+	     {
+  	          return "index";
+	     }
 	
 	     @RequestMapping("/home")
 		 public String index(){
@@ -41,5 +41,10 @@ public class HomeController {
 	 	 public String accessDeniedPage()
 	 	 {
 	 		return "accessDenied";
-	 	 }	    	    
+	 	 }
+	     
+	     @RequestMapping("/logout")
+		 public String logout(){
+	   	 return "index";
+	     }
 }
