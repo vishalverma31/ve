@@ -1,5 +1,7 @@
 package com.ve.veBackend.model;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,8 +13,10 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-public class Person {
+public class Person implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -29,6 +33,7 @@ public class Person {
 	private Boolean enabled;
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="cartId")
+	@JsonIgnore
 	private Cart cart;
 	
 	public Cart getCart() {
@@ -89,7 +94,11 @@ public class Person {
 		this.name = name;
 	}
 	
-	
-	
+	@Override
+	 public String toString()
+	 {
+	     return "Person [id=" + id + ", name=" + name + ", email=" + email + ", number=" + number + ", address=" + address 
+	              + ", password=" + password +", role=" + role +", enabled=" + enabled+ ", cart=" +cart+ "]";
+	 }
 
 }

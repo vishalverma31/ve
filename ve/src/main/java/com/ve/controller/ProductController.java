@@ -7,9 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 
 import com.google.gson.Gson;
 import com.ve.veBackend.dao.productDAO;
@@ -51,6 +48,6 @@ public class ProductController {
 		 return model;
      }
      
-     
+	 
         
 }

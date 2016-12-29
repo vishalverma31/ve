@@ -2,6 +2,7 @@ package com.ve.veBackend.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -11,14 +12,17 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Cart {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int cartId;
-	@OneToMany(fetch=FetchType.EAGER)
+	@OneToMany(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
 	@JoinColumn(name="itemId")
+	@JsonManagedReference
 	private List<Item> items;
 	@OneToOne
 	@JoinColumn(name="id")
@@ -44,7 +48,10 @@ public class Cart {
 		this.person = person;
 	}
 	
-	
-	
+	@Override
+	   public String toString()
+	   {
+	      return "Cart [cartId=" + cartId+ ", items=" +items+ ", person=" +person+"]";
+	   }
 
 }

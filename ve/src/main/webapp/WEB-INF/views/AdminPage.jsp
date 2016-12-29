@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%@ page session="false"%>
+<%-- <%@ page session="false"%> --%>
 <%@ page isELIgnored="false" %>
 <html>
 <head>
@@ -270,7 +270,9 @@
 </c:if>
 <br>
 </div>
+
 <br>
+
 <!-- Footer -->
 <footer class="footer" id="footer1">
    <div class="container">

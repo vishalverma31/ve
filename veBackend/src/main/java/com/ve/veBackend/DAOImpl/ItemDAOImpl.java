@@ -48,4 +48,10 @@ public class ItemDAOImpl implements ItemDAO{
 		return item;
 	}
 
+	public List<Item> getAllItemsByCart(int cartId) {
+		Session session=sessionFactory.getCurrentSession();
+		List<Item> items=session.createQuery("from Item where cartId="+cartId).getResultList();
+		return items;
+	}
+
 }

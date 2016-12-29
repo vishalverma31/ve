@@ -71,4 +71,11 @@ public class Product {
 	public void setImage(MultipartFile image) {
 		this.image = image;
 	}
+	
+	@Override
+	   public String toString()
+	   {
+	      return "Product [ productId=" + productId + ", productName=" + productName + ", category=" + category + ", description=" + description + ", brand=" + brand + ", price=" + price + "]";
+	   }
+	
 }

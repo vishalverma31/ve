@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Item {
 	
@@ -20,6 +22,7 @@ public class Item {
 	private double itemTotal;
 	@ManyToOne
 	@JoinColumn(name="cartId")
+	@JsonBackReference
 	private Cart cart;
 	
 	
@@ -57,4 +60,12 @@ public class Item {
 		this.itemTotal = itemTotal;
 	}
 	
+	@Override
+	   public String toString()
+	   {
+	      return "Item [itemId=" + itemId + ","
+	      +" product="+product+", quantity=" + quantity + ", itemTotal=" + itemTotal 
+	      +" cart=" +cart+ "]";
+	   }
+
 }

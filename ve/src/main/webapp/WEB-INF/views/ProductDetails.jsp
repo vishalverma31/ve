@@ -10,15 +10,21 @@
 <br>
 <br>
 <div class="container" id="div1">
-       <div class="row"></div>  
+        <h1>${product.productName}</h1>
+         <!-- width="230" height="180" -->
          <div class="row">
-         
-         <h1>${product.productName}</h1>
-         
-         <li><h4>Brand</h4>${product.brand}</li>
-         <li><h4>Description</h4>${product.description}</li>
-         <li><h4>Price</h4>${product.price}</li>
-         <li><h4>Category</h4>${product.category}</li>
+           <div class="col-md-6">
+                <img src="<c:url value='/resources/${product.productId}.jpg' />" class="img-responsive" alt="Picture"  />
+           </div>
+           <div class="col-md-6">
+                <ul>
+                    <li><h4>Brand</h4>${product.brand}</li>
+                    <li><h4>Description</h4>${product.description}</li>
+                    <li><h4>Price</h4>${product.price}</li>
+                    <li><h4>Category</h4>${product.category}</li>
+                    <a class="btn btn-primary" href="<c:url value='/AddToCart/${product.productId}' />">Add to Cart</a>
+               </ul>
+          </div>
          </div>
 </div>
 <%@ include file="template/Footer.jsp" %>

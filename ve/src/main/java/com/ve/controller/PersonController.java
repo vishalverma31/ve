@@ -109,7 +109,7 @@ public class PersonController {
 				bytes = product.getImage().getBytes();
 				pDAO.addProduct(product);
 				System.out.println("Data Inserted");
-				String path = request.getSession().getServletContext().getRealPath("/resources/images/" + product.getProductId() + ".jpg");
+				String path = request.getSession().getServletContext().getRealPath("/resources/"+product.getProductId()+".jpg");
 				System.out.println("Path = " + path);
 				System.out.println("File name = " + product.getImage().getOriginalFilename());
 				File f = new File(path);
