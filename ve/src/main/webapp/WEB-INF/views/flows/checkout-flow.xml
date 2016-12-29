@@ -1,18 +1,21 @@
 <flow xmlns="http://www.springframework.org/schema/webflow"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/webflow
-    http://www.springframework.org/schema/webflow/spring-webflow.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow 
+	http://www.springframework.org/schema/webflow/spring-webflow.xsd">
 
-	<view-state id="page1" view="CartPage.jsp">
+    <var name="order" class="com.ve.veBackend.model.UserOrder" />
+
+    <action-state id="orderProcess">
+         <evaluate expression="userOrderDAO.getUserOrderById(requestParameters.orderId)" result="order" />
+		<transition to="ShippingAddress" />
+	</action-state>
+	
+	<view-state id="page1" view="Address.jsp">
 		<transition on="event1" to="page2"></transition>
 	</view-state>
 	
-	<view-state id="page2" view="Address.jsp">
-		<transition on="event2" to="page3"></transition>
-	</view-state>
-	
-	<view-state id="page3" view="Confirmation.jsp">
-	<transition on="event3" to="page4"></transition>
+	<view-state id="page2" view="Confirmation.jsp">
+	<transition on="event2" to="page3"></transition>
 	</view-state>
 	
 	<view-state id="page4" view="Thankyou.jsp">

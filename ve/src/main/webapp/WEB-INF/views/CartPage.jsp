@@ -48,7 +48,7 @@
           <td></td>
           <td>Total:</td>
           <td>{{GrandTotalOfItems()}}</td>
-          <td><a href="<c:url value='/checkout' />">CheckOut</a></td>
+          <td><a href="<c:url value='/order/${user.cart.cartId}'/>" class="btn btn-success">CheckOut</a></td>
       </tr>
 	  
 	

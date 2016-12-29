@@ -13,11 +13,13 @@ import org.springframework.web.servlet.ModelAndView;
 import com.ve.veBackend.dao.CartDAO;
 import com.ve.veBackend.dao.ItemDAO;
 import com.ve.veBackend.dao.PersonDAO;
+import com.ve.veBackend.dao.UserOrderDAO;
 import com.ve.veBackend.dao.productDAO;
 import com.ve.veBackend.model.Cart;
 import com.ve.veBackend.model.Item;
 import com.ve.veBackend.model.Person;
 import com.ve.veBackend.model.Product;
+import com.ve.veBackend.model.UserOrder;
 
 @Controller
 public class CartController {
@@ -30,6 +32,8 @@ public class CartController {
     ItemDAO itemDAO;
     @Autowired
     CartDAO cartDAO;
+    @Autowired
+    UserOrderDAO userOrderDAO;
     
     @RequestMapping("/AddToCart/{productId}")
     public String cart(@PathVariable("productId") int productId, Principal principal){
@@ -76,5 +80,21 @@ public class CartController {
          model.addObject("cart", cart);
          return model;	
      }
-    
+     
+     @RequestMapping("/order/{cartId}")
+     public String createOrder(@PathVariable("cartId") int cartId){
+		 UserOrder userOrder=new UserOrder();
+		 Cart cart=cartDAO.getCartById(cartId);
+		 userOrder.setCart(cart);
+		 Person person=cart.getPerson();
+		 userOrder.setPerson(person);
+		 
+		 userOrderDAO.addOrder(userOrder);
+    	 
+		 
+    	 
+    	 return "redirect:/checkout?orderId="+userOrder.getOrderId();
+     
+     }
+
 }
