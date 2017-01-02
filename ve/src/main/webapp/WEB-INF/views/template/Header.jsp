@@ -2,6 +2,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/034feea29c.js"></script>
@@ -38,7 +39,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
 <div class="container-fuild">
   <div class="navbar-header">
-    <a class="navbar-brand" href="#"><img src="<c:url value='/resources/logo.png"' /> alt="VE" height="30" class="img-rounded"></img></a>
+    <a class="navbar-brand" href="#"><img src="<c:url value='/resources/logo.png' />" alt="VE" height="30" class="img-rounded"></img></a>
   </div>
   <ul class="nav navbar-nav">
     <li><a href="<c:url value='/home' />"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a></li>

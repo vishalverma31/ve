@@ -41,7 +41,7 @@ public class WebflowConfig extends AbstractFlowConfiguration{
 	public FlowDefinitionRegistry flowRegistry()
 	{
 		return getFlowDefinitionRegistryBuilder()
-				.addFlowLocation("/WEB-INF/views/flows/demo-flow.xml","demoFlow")
+				.addFlowLocation("/WEB-INF/views/flows/checkout-flow.xml","checkoutFlow")
 				.build();
 	}
 	

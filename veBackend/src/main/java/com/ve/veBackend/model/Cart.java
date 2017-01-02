@@ -1,5 +1,6 @@
 package com.ve.veBackend.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -15,13 +16,13 @@ import javax.persistence.OneToOne;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
-public class Cart {
+public class Cart implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int cartId;
-	@OneToMany(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
-	@JoinColumn(name="itemId")
+	@OneToMany(fetch=FetchType.EAGER,mappedBy="cart",cascade=CascadeType.ALL)
+	//@JoinColumn(name="itemId")
 	@JsonManagedReference
 	private List<Item> items;
 	@OneToOne

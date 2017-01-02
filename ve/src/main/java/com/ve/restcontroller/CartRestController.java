@@ -21,8 +21,7 @@ public class CartRestController {
     
     @RequestMapping("/refreshCart/{cartId}")
 	 public Cart getCartById(@PathVariable("cartId") int cartId){
- 	      Cart cart=cartDAO.getCartById(cartId);
-          return cart;
+ 	      return cartDAO.getCartById(cartId);
    }
 	 
     @RequestMapping(value="/removeItem/{itemId}", method=RequestMethod.PUT)

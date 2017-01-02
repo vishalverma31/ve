@@ -65,8 +65,12 @@ public class CartController {
         item.setItemTotal(product.getPrice()*item.getQuantity());
         item.setCart(cart);
         System.out.println("first item");
+        try{
         itemDAO.addItem(item);
-                       
+        }catch(Exception e)
+        {
+        	System.out.print(e);
+        }
     	return "redirect:/Cart";	
     }
             
@@ -77,7 +81,9 @@ public class CartController {
          Person person=personDAO.getPersonByName(principal.getName());
          model.addObject("person", person);
          Cart cart=person.getCart();
+         cart.getItems();
          model.addObject("cart", cart);
+         cart.getItems();
          return model;	
      }
      
@@ -96,5 +102,6 @@ public class CartController {
     	 return "redirect:/checkout?orderId="+userOrder.getOrderId();
      
      }
-
+     
+     
 }

@@ -7,6 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/034feea29c.js"></script>
@@ -25,6 +26,11 @@
   background-color:black;
   }
   #div1{ background-color:#fafaf2;}
+  #img1 {
+   padding:1px;
+   border:1px solid #021a40;
+   background-color:#D6D1CF;
+   }
   </style>
 </head>
 <body>
@@ -75,7 +81,9 @@
   </sec:authorize>
 </div>
 </nav>
-
+<br>
+<br>
+<br>
 <!-- Carousel code -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -115,16 +123,18 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
+<br>
 <!-- Youtube Video-->
-<div class="container">
+<div class="container" id="div1">
 <div class="row">
-  <div class="col-sm-8" id="div1">
+  <div class="col-sm-6" >
    <h3>100% Secure Payment{All Credit and Debit Cards Accepted}</h3>
    <h3>100% Payment Protection</h3>
    <h3>Easy Return Policy</h3>
   </div>
-  <div class="col-sm-4"><iframe width="420" height="150" src="https://www.youtube.com/embed/Q6dsRpVyyWs">
+  <div class="col-sm-6">
+   <br>
+   <iframe align="right" width="420" height="150" src="https://www.youtube.com/embed/Q6dsRpVyyWs">
    </iframe>
   </div>
 </div>
@@ -132,12 +142,13 @@
 <br>
 
   <div class="row">
-  <div class="col-sm-3"><img src="resources/cspeaker.JPG" class="img-circle" alt="Speakers" width="230" height="180"></div>
-  <div class="col-sm-3"><img src="resources/cwatch.JPG" class="img-circle" alt="Watch" width="230" height="180"></div>
-  <div class="col-sm-3"><img src="resources/ctv.JPG" class="img-circle" alt="TV" width="230" height="180"></div>
-  <div class="col-sm-3"><img src="resources/claptop.JPG" class="img-circle" alt="Laptop" width="230" height="180"></div>
+  <div class="col-sm-3"><img id="img1" src="resources/cspeaker.JPG" class="img-circle" alt="Speakers" width="230" height="180"></div>
+  <div class="col-sm-3"><img id="img1" src="resources/cwatch.JPG" class="img-circle" alt="Watch" width="230" height="180"></div>
+  <div class="col-sm-3"><img id="img1" src="resources/ctv.JPG" class="img-circle" alt="TV" width="230" height="180"></div>
+  <div class="col-sm-3"><img id="img1" src="resources/claptop.JPG" class="img-circle" alt="Laptop" width="230" height="180"></div>
    </div>
+<br>
 </div>
-
+<br>
 <!-- Footer -->
 <%@ include file="template/Footer.jsp" %>

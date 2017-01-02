@@ -9,6 +9,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/034feea29c.js"></script>
@@ -18,8 +19,8 @@
   }
   #div { 
     background-color:#fafaf2;
-	width:400px;
-	height:440px;
+	width:700px;
+	height:400px;
 	
   }
   #footer {
@@ -66,19 +67,6 @@
 
 
 <!-- Middle Content -->
-<script>
-function validate_form(thisform)
-{
-with (thisform)
-  {
-      if (pass.value != cpass.value) { 
-    	   alert("Your password and confirmation password do not match.");
-    	   cpassword.focus();
-    	   return false; 
-    	}
-  }
-} 
-</script>
 
 
 <div class="container" id="div">
@@ -86,9 +74,9 @@ with (thisform)
   <p align="center">Please enter your details carefully:</p>
   <form:form action="register" modelAttribute="person" class="form-horizontal">
     <div class="form-group">
-      <form:label class="control-label col-sm-2" path="name" for="name">Name: </form:label>
+      <form:label class="control-label col-sm-2" path="name" for="name">User Name: </form:label>
 	  <div class="col-xs-10">
-	  <form:input type="text" class="form-control" path="name" id="name" placeholder="Enter your name"></form:input>
+	  <form:input type="text" class="form-control" path="name" id="name" placeholder="Enter user name"></form:input>
 	  <form:errors path="name"></form:errors>
 	  </div>
     </div>
@@ -96,7 +84,7 @@ with (thisform)
 	<div class="form-group">
       <form:label class="control-label col-sm-2" path="email" for="email">Email Address: </form:label>
       <div class="col-xs-10">
-	  <form:input type="text" class="form-control" path="email" id="email" placeholder="Enter Email Id"></form:input>
+	  <form:input type="text" class="form-control" path="email" id="email" placeholder="Enter Email Address"></form:input>
 	  <form:errors path="email"></form:errors>
 	  </div>	
     </div>
@@ -117,13 +105,7 @@ with (thisform)
 	  </div>
     </div>
 	
-	<div class="form-group">
-      <label class="control-label col-sm-2" for="cpwd">Confirm Password: </label>
-	  <div class="col-xs-10">
-	  <input type="password" class="form-control" id="cpwd" name="cpass" placeholder="Confirm Password"/>
-	  </div>
-    </div>
-	  <input type="submit" class="btn btn-primary btn-sm btn-block" value="Register" />
+	<input type="submit" class="btn btn-primary btn-sm btn-block" value="Register" />
    
     </form:form>
 </div>
