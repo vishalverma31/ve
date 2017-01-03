@@ -13,7 +13,7 @@ import com.ve.veBackend.dao.ItemDAO;
 import com.ve.veBackend.model.Cart;
 import com.ve.veBackend.model.Item;
 
-@Repository("ItemDAO")
+@Repository("itemDAO")
 @Transactional
 @EnableTransactionManagement
 public class ItemDAOImpl implements ItemDAO{

@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.ve.veBackend.dao.UserOrderDAO;
 import com.ve.veBackend.model.UserOrder;
 
-@Repository("UserOrderDAO")
+@Repository("userOrderDAO")
 @Transactional
 @EnableTransactionManagement
 public class UserOrderDAOImpl implements UserOrderDAO{

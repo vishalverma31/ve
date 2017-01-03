@@ -21,16 +21,25 @@ public class Person implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	
 	@NotEmpty(message="Name field can't be empty")
 	private String name;
+	
 	private String email;
+	
 	@Size(min=10,max=10,message="Mobile No. has to be of 10 digits")
 	private String number;
-	private String address;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="shippingAddressId")
+	public ShippingAddress shippingAddress;
+	
 	@Size(min=6,max=18,message="Password has to be between 6 to 18 characters")
 	private String password;
+	
 	private String role;
 	private Boolean enabled;
+	
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="cartId")
 	@JsonIgnore
@@ -54,12 +63,7 @@ public class Person implements Serializable {
 	public void setNumber(String number) {
 		this.number = number;
 	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
+	
 	public String getPassword() {
 		return password;
 	}
@@ -94,10 +98,16 @@ public class Person implements Serializable {
 		this.name = name;
 	}
 	
+	public ShippingAddress getShippingAddress() {
+		return shippingAddress;
+	}
+	public void setShippingAddress(ShippingAddress shippingAddress) {
+		this.shippingAddress = shippingAddress;
+	}
 	@Override
 	 public String toString()
 	 {
-	     return "Person [id=" + id + ", name=" + name + ", email=" + email + ", number=" + number + ", address=" + address 
+	     return "Person [id=" + id + ", name=" + name + ", email=" + email + ", number=" + number + ", address=" + shippingAddress 
 	              + ", password=" + password +", role=" + role +", enabled=" + enabled+ ", cart=" +cart+ "]";
 	 }
 

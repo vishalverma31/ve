@@ -27,7 +27,10 @@
   height: 45px;
   background-color:black;
   }
-  #div1{ background-color:#fafaf2;}
+  #div2{ background-color:#fafaf2;}
+  #div1{ background-color:#fafaf2;
+         width:700px;
+	     height:400px;}
   .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
   .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
   .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}

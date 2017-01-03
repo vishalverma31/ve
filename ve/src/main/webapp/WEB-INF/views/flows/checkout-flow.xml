@@ -5,26 +5,26 @@
 
     <var name="order" class="com.ve.veBackend.model.UserOrder" />
 
+    
     <action-state id="orderProcess">
          <evaluate expression="userOrderDAO.getUserOrderById(requestParameters.orderId)" result="order" />
-		<transition to="ShippingAddress" />
+		<transition to="shippingAddress" />
 	</action-state>
 	
-	<view-state id="ShippingAddress" view="Address.jsp" model="order">
-		<transition on="ShippingAddressChecked" to="updateAddress"></transition>
+	<view-state id="shippingAddress" view="ShippingAddress.jsp" model="flowScope.order">
+		<transition on="shippingAddressChecked" to="updateAddress" bind="true" validate="true"></transition>
 	</view-state>
             
-  <action-state id="updateAddress">
+   <action-state id="updateAddress">
          <evaluate expression="personDAO.updatePerson(order.cart.person)" />
 		<transition to="orderSummary" />
 	</action-state>
-
-	
-	<view-state id="orderSummary" view="Confirmation.jsp">
-	<transition on="orderSummary" to="clearCart"></transition>
+ 
+	<view-state id="orderSummary" view="OrderSummary.jsp">
+	       <transition on="confirmOrder" to="clearCart"></transition>
 	</view-state>
 	
-          <action-state id="clearCart">
+    <action-state id="clearCart">
          <evaluate expression="itemDAO.removeAllItems(order.cart)"  />
 		<transition to="TY" />
 	</action-state>

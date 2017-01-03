@@ -11,7 +11,7 @@ import com.ve.veBackend.dao.CartDAO;
 import com.ve.veBackend.model.Cart;
 
 
-@Repository("CartDAO")
+@Repository("cartDAO")
 @Transactional
 @EnableTransactionManagement
 public class CartDAOImpl implements CartDAO{

@@ -12,9 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 import com.ve.veBackend.dao.PersonDAO;
 import com.ve.veBackend.model.Cart;
 import com.ve.veBackend.model.Person;
+import com.ve.veBackend.model.ShippingAddress;
 
 
-@Repository("PersonDAO")
+@Repository("personDAO")
 @Transactional
 @EnableTransactionManagement
 public class PersonDAOImpl implements PersonDAO{
@@ -24,7 +25,7 @@ public class PersonDAOImpl implements PersonDAO{
 
 	public void addPerson(Person p) {
 		Session session=sessionFactory.getCurrentSession();
-		p.setAddress(null);	
+			
         p.setEnabled(true);
 	    p.setRole("ROLE_USER");
 	    
@@ -32,6 +33,10 @@ public class PersonDAOImpl implements PersonDAO{
 	    cart.setPerson(p);
 	    p.setCart(cart);
 		
+	    ShippingAddress address= new ShippingAddress();
+	    address.setPerson(p);
+        p.setShippingAddress(address);
+        
 	    session.saveOrUpdate(p);
 		
 	}

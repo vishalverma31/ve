@@ -34,14 +34,16 @@ public class WebflowConfig extends AbstractFlowConfiguration{
 	@Bean
 	public FlowExecutor flowExecutor()
 	{
-		return getFlowExecutorBuilder(flowRegistry()).build();
+		return getFlowExecutorBuilder(flowRegistry())
+				.setMaxFlowExecutionSnapshots(0)
+				.build();
 	}
 	
 	@Bean
 	public FlowDefinitionRegistry flowRegistry()
 	{
 		return getFlowDefinitionRegistryBuilder()
-				.addFlowLocation("/WEB-INF/views/flows/checkout-flow.xml","checkoutFlow")
+				.addFlowLocation("/WEB-INF/views/flows/checkout-flow.xml","checkout")
 				.build();
 	}
 	

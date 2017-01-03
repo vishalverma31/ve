@@ -12,7 +12,8 @@ public class WebAppInitializer implements WebApplicationInitializer {
 	
 	public void onStartup(ServletContext container) throws ServletException {
 		AnnotationConfigWebApplicationContext context=new AnnotationConfigWebApplicationContext();
-		context.register(WebConfig.class);
+		context.register(WebConfig.class,WebflowConfig.class);
+		
 		context.setServletContext(container);
 		
 		ServletRegistration.Dynamic servlet=container.addServlet("dispatcher", new DispatcherServlet(context));

@@ -59,7 +59,7 @@ public class PersonController {
         
     }
     
-    
+         
 	@RequestMapping(value= "/person/add", method = RequestMethod.POST)
 	public String addPerson(@ModelAttribute("person") Person person,HttpServletRequest request)
 	{

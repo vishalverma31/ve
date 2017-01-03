@@ -1,5 +1,7 @@
 package com.ve.veBackend.model;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class UserOrder {
+public class UserOrder implements Serializable{
      
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -38,6 +40,10 @@ public class UserOrder {
 	public void setPerson(Person person) {
 		this.person = person;
 	}
-	
+	@Override
+	 public String toString()
+	 {
+	     return "UserOrder [orderId=" +orderId+ ", cart=" +cart+ ", person=" +person+ "]";
+	 }
 	
 }
