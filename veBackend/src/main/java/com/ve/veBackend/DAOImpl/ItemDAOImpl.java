@@ -29,16 +29,14 @@ public class ItemDAOImpl implements ItemDAO{
 
 	public void removeItem(Item item) {
 		Session session=sessionFactory.getCurrentSession();
-		session.delete(item);
-		
+		String hql = "delete from Item where itemId="+item.getItemId();
+		session.createQuery(hql).executeUpdate();
 	}
 
 	public void removeAllItems(Cart cart) {
-		List<Item> items=cart.getItems();
-		for(Item item:items)
-		{
-			removeItem(item);
-		}
+		Session session=sessionFactory.getCurrentSession();
+		String hql = "delete from Item where cartId="+cart.getCartId(); 
+		session.createQuery(hql).executeUpdate();
 		
 	}
 

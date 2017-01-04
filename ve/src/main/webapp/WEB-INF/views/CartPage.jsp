@@ -40,7 +40,7 @@
         <td>{{item.quantity}}</td>
         <td>{{item.itemTotal}}</td>
         
-        <td><a href="#" ng-click="removeItemFromCart(${item.itemId})"><i class="fa fa-times" aria-hidden="true"></i></a></td>
+        <td><a href="#" ng-click="removeItemFromCart(item.itemId)"><i class="fa fa-times" aria-hidden="true"></i></a></td>
       </tr>
       
       <tr>

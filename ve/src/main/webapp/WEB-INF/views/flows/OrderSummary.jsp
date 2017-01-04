@@ -42,8 +42,7 @@
         <th>Price</th>
         <th>Quantity</th>
         <th>Item Total</th>
-        
-        <th></th>
+                
       </tr>
     </thead>
     <tbody>
@@ -54,8 +53,6 @@
         <td>{{item.product.price}}</td>
         <td>{{item.quantity}}</td>
         <td>{{item.itemTotal}}</td>
-        
-        <td><a href="#" ng-click="removeItemFromCart(${item.itemId})"><i class="fa fa-times" aria-hidden="true"></i></a></td>
       </tr>
       
       <tr>
@@ -63,8 +60,6 @@
           <td></td>
           <td>Total:</td>
           <td>{{GrandTotalOfItems()}}</td>
-          <td><input type="submit" class="btn btn-primary btn-sm btn-block" value="Confirm Order" name="_eventId_clearCart"/>
-           <input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}"></td>
           
       </tr>
 	  
@@ -72,6 +67,17 @@
 	  
     </tbody>
   </table>
+      <form:form class="form-horizontal">
+      <input type="hidden" name="_flowExecutionKey">
+      <input type="submit" value="Change Address" class="btn btn-default" name="_eventId_shippingAddress" />
+      <input type="submit" value="Submit Order" class="btn btn-default" name="_eventId_orderConfirmed" />
+     </form:form>
+     <!-- <input type="submit" class="btn btn-success" name="_eventId_orderConfirmed" value="Next"  />
+       -->              
+          
+   
+  
+      
   
   
   </div>
