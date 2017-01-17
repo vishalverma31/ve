@@ -96,9 +96,7 @@ public class CartController {
 		 userOrder.setPerson(person);
 		 
 		 userOrderDAO.addOrder(userOrder);
-    	 
-		 
-    	 
+    	     	 
     	 return "redirect:/checkout?orderId="+userOrder.getOrderId();
      
      }

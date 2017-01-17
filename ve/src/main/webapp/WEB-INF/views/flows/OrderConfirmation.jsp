@@ -11,7 +11,7 @@
 <br>
 <br>
 <br>
-<div class="section text-center" id="div1">
+<div class="container" id="div1">
 
 <h2>Thank you for  placing your order with us. Your Order Number is : ${order.orderId}</h2>
 <br>

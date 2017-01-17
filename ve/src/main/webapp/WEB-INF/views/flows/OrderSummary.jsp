@@ -69,7 +69,7 @@
   </table>
       <form:form class="form-horizontal">
       <input type="hidden" name="_flowExecutionKey">
-      <input type="submit" value="Change Address" class="btn btn-default" name="_eventId_shippingAddress" />
+      
       <input type="submit" value="Submit Order" class="btn btn-default" name="_eventId_orderConfirmed" />
      </form:form>
      <!-- <input type="submit" class="btn btn-success" name="_eventId_orderConfirmed" value="Next"  />
