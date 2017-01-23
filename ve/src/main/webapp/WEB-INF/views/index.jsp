@@ -142,10 +142,29 @@
 <br>
 
   <div class="row">
-  <div class="col-sm-3"><img id="img1" src="resources/cspeaker.JPG" class="img-circle" alt="Speakers" width="230" height="180"></div>
-  <div class="col-sm-3"><img id="img1" src="resources/cwatch.JPG" class="img-circle" alt="Watch" width="230" height="180"></div>
-  <div class="col-sm-3"><img id="img1" src="resources/ctv.JPG" class="img-circle" alt="TV" width="230" height="180"></div>
-  <div class="col-sm-3"><img id="img1" src="resources/claptop.JPG" class="img-circle" alt="Laptop" width="230" height="180"></div>
+  		<div class="col-sm-3">
+  			<a href="<c:url value='/productpage/Speaker' />">
+  			<img id="img1" src="resources/cspeaker.JPG" class="img-circle" alt="Speakers" width="230" height="180">
+  			</a>
+  		</div>
+  		
+  		<div class="col-sm-3">
+  			<a href="<c:url value='/productpage/Wearables' />">
+  			<img id="img1" src="resources/cwatch.JPG" class="img-circle" alt="Watch" width="230" height="180">
+  			</a>
+  		</div>
+  		
+  		<div class="col-sm-3">
+  			<a href="<c:url value='/productpage/Full HD TV' />">
+  			<img id="img1" src="resources/ctv.JPG" class="img-circle" alt="TV" width="230" height="180">
+  			</a>
+  		</div>
+  		
+  		<div class="col-sm-3">
+  			<a href="<c:url value='/productpage/Laptop' />">
+  			<img id="img1" src="resources/claptop.JPG" class="img-circle" alt="Laptop" width="230" height="180">
+  			</a>
+  		</div>
    </div>
 <br>
 </div>

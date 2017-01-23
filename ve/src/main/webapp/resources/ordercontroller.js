@@ -14,7 +14,7 @@ cartApp.controller("addToCartCtrl",function($scope, $http){
         
 	$scope.removeItemFromCart=function(itemId){
 			alert('Remove item Called')
-			$http.put('http://localhost:9186/ve/removeItem/'+itemId).success(function (data) {
+			$http.put('http://localhost:9080/ve/removeItem/'+itemId).success(function (data) {
 			     $scope.refreshCartItems();
 	   });
 	};
@@ -29,7 +29,7 @@ cartApp.controller("addToCartCtrl",function($scope, $http){
     };
     
     $scope.refreshCartItems= function() {
-		$http.get('http://localhost:9186/ve/refreshCart/'+$scope.cartId).success(function (data){  
+		$http.get('http://localhost:9080/ve/refreshCart/'+$scope.cartId).success(function (data){  
 		  $scope.cart=data;
 		 });
 		}; 

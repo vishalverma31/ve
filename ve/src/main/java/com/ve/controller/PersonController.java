@@ -153,6 +153,7 @@ public class PersonController {
 		
 		model.addAttribute("product", pDAO.getProductById(Pid));
         model.addAttribute("listProducts", pDAO.getAllProducts());
+        
         return "AdminPage";
 	}
 }
