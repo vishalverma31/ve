@@ -6,7 +6,9 @@
   <title>Cart</title>
 
 <%@ include file="template/Header.jsp" %>
+
 <script src="<c:url value='/resources/ordercontroller.js' />"></script>
+
 <br>
 <br>
 <br>
@@ -37,7 +39,11 @@
         <td>{{item.product.productName}}</td>
         <td>{{item.product.brand}}</td>
         <td>{{item.product.price}}</td>
-        <td>{{item.quantity}}</td>
+        <td>
+        <a href="#" ng-click="decreaseQuantity(item.itemId)"><i class="fa fa-minus-circle" aria-hidden="true"></i></a>
+        {{item.quantity}}
+        <a href="#" ng-click="increaseQuantity(item.itemId)"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+        </td>
         <td>{{item.itemTotal}}</td>
         
         <td><a href="#" ng-click="removeItemFromCart(item.itemId)"><i class="fa fa-times" aria-hidden="true"></i></a></td>

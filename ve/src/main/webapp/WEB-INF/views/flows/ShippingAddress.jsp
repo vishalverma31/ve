@@ -24,6 +24,7 @@
       <form:label class="control-label col-sm-2" path="shippingAddress.address1" for="address1">Address: </form:label>
 	  <div class="col-xs-10">
 	  <form:input type="text" class="form-control" path="shippingAddress.address1" id="address1" placeholder="Address Line 1"></form:input>
+	  
 	  </div>
     </div>
 	
@@ -31,6 +32,7 @@
       <form:label class="control-label col-sm-2" path="shippingAddress.address2" for="address2">Address: </form:label>
       <div class="col-xs-10">
 	  <form:input type="text" class="form-control" path="shippingAddress.address2" id="address2" placeholder="Address Line 2"></form:input>
+	  
 	  </div>	
     </div>
 	
@@ -38,6 +40,7 @@
       <form:label class="control-label col-sm-2" path="shippingAddress.city" for="city">City: </form:label>
       <div class="col-xs-10">
 	  <form:input type="text" class="form-control" path="shippingAddress.city" id="city" placeholder="Enter your City" />
+	  
 	  </div>
     </div>
 	
@@ -45,6 +48,7 @@
       <form:label class="control-label col-sm-2" path="shippingAddress.pin" for="pin">Pin: </form:label>
 	  <div class="col-xs-10">
 	  <form:input type="text" class="form-control" path="shippingAddress.pin" id="pin"  placeholder="Enter Pin" />
+	  
 	  </div>
     </div>
 	

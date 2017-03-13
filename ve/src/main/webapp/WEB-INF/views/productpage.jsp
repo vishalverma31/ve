@@ -8,6 +8,27 @@
  
  <%@ include file="template/Header.jsp" %>
 
+<style type="text/css">
+p.showLess {
+    white-space: nowrap; 
+    width: 300px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+</style>
+
 <script>
 
 var prod=${productList};
@@ -32,42 +53,49 @@ angular.module("productApp",[])
 <div ng-app="productApp" ng-controller="productController"> 
 
 <br>
-<input type="text" ng-model="search" align="right" placeholder="Search"/>
-<br/>
-  <table class="tg">
-    <thead>
-      <tr>
-        <th ng-click="sort('productId')">Product ID</th>
-        <th ng-click="sort('brand')">Product Brand</th>
-        <th ng-click="sort('productName')">Product Name</th>
-        <th ng-click="sort('price')">Price</th>
-        <th ng-click="sort('category')">Category</th>
-        <th ng-click="sort('description')">Product Description</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      
-	  <tr ng-repeat="product in prodData | filter:search | orderBy: sortKey : reverse">
-        <td>{{product.productId}}</td>
-        <td>{{product.brand}}</td>
-        <td>{{product.productName}}</td>
-        <td>{{product.price}}</td>
-        <td>{{product.category}}</td>
-        <td>{{product.description}}</td>
-        <td><a href="<c:url value='/ProductDetails/{{product.productId}}'/>" ><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
-      </tr>
-	  
-	
-	  
-    </tbody>
-  </table>
+<div class="row">
+    <div class="col-md-6">
+		<input type="text" ng-model="search" align="right" placeholder="Search"/>
+	</div>
+	<div class="col-md-6" align="right">
+		<div class="dropdown" >
+		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort By:
+		<span class="caret"></span></button>
+		<ul class="dropdown-menu dropdown-menu-right">
+			<li ng-click="sort('brand')">Product Brand</li>
+			<li ng-click="sort('productName')">Product Name</li>
+			<li ng-click="sort('price')">Price</li>
+			<li ng-click="sort('category')">Category</li>	
+		</ul>
+	</div>
+</div>
+</div>
+<br>
+
+<div ng-repeat="product in prodData | filter:search | orderBy: sortKey : reverse">
+  <div class="card">
+	<div class="row">
+        <div class="col-md-4">
+            <img src="<c:url value='/resources/{{product.productId}}.jpg' />" style="width:150px; height:200px" class="img-thumbnail" alt="Picture"  />
+        </div>
+		<div class="col-md-8"">
+			<h3><b>{{product.productName}}</b></h3>
+			<h5>{{product.brand}} <i class="fa fa-inr" aria-hidden="true"></i> {{product.price}} </h5>
+			<h6>{{product.category}}</h6>
+			<h6 class="showLess">{{product.description}}</h6>
+			<p>Get Details <a href="<c:url value='/ProductDetails/{{product.productId}}'/>" ><i class="fa fa-info-circle" aria-hidden="true"></i></a></p>        
+		</div>
+	</div>
   </div>
+  <br>
+</div>
+  
  </div>
 <br>
 <br>
 </div>
 
+<br>
 <!-- Footer -->
 <footer class="footer" id="footer1">
    <div class="container">

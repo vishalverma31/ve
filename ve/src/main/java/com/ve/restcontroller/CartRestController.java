@@ -29,4 +29,31 @@ public class CartRestController {
  	    Item item=itemDAO.getItemByItemId(itemId);
          itemDAO.removeItem(item);
    }
+    
+    @RequestMapping(value="/increaseQuantity/{itemId}", method=RequestMethod.GET)
+     public void incQuantity(@PathVariable("itemId") int itemId){
+    	Item item=itemDAO.getItemByItemId(itemId);
+    	int qty=item.getQuantity();
+    	qty++;
+    	item.setQuantity(qty);
+    	item.setItemTotal(item.getItemTotal()*qty);
+    	itemDAO.updateItem(item);
+   }
+    
+    @RequestMapping(value="/decreaseQuantity/{itemId}", method=RequestMethod.GET)
+     public void decQuantity(@PathVariable("itemId") int itemId){
+   	  Item item=itemDAO.getItemByItemId(itemId);
+   	  int qty=item.getQuantity();
+   	  if(qty==1)
+   	  {
+   		itemDAO.removeItem(item);
+   	  }
+   	  else
+   	  {
+   	    qty--;
+   	    item.setQuantity(qty);
+   	    item.setItemTotal(item.getItemTotal()*qty);
+   	    itemDAO.updateItem(item);
+   	  }
+    }
 }

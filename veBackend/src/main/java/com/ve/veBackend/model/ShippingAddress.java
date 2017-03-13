@@ -9,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -18,9 +17,14 @@ public class ShippingAddress implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int shippingAddressId;
+	
 	private String address1;
+	
 	private String address2;
+	
 	private String city;
+	
+	
 	private String pin;
 	@OneToOne
 	@JoinColumn(name="id")

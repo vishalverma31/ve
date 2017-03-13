@@ -62,6 +62,7 @@
   </ul>
   <sec:authorize access="hasRole('ROLE_ADMIN')">
      <ul class="nav navbar-nav navbar-right">
+      <li><a href="">Welcome, <b><sec:authentication property="principal.username" /></b></a></li>
       <li><a href="AdminPage"><i class="fa fa-buysellads fa-fw" aria-hidden="true"></i> Admin Page</a></li>
       <li><a href="Cart"><i class="fa fa-shopping-cart fa-fw" aria-hidden="true"></i> Cart</a></li>
       <li><a href="logout"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
@@ -69,6 +70,7 @@
   </sec:authorize>
   <sec:authorize access="hasRole('ROLE_USER')">
      <ul class="nav navbar-nav navbar-right">
+      <li><a href="">Welcome, <b><sec:authentication property="principal.username" /></b></a></li>
       <li><a href="Cart"><i class="fa fa-shopping-cart fa-fw" aria-hidden="true"></i> Cart</a></li>
       <li><a href="logout"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
      </ul>

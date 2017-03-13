@@ -52,4 +52,10 @@ public class ItemDAOImpl implements ItemDAO{
 		return items;
 	}
 
+	public void updateItem(Item item) {
+		Session session=sessionFactory.getCurrentSession();
+		session.saveOrUpdate(item);
+		
+	}
+
 }

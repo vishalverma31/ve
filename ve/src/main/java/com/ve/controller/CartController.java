@@ -84,6 +84,7 @@ public class CartController {
          cart.getItems();
          model.addObject("cart", cart);
          cart.getItems();
+         
          return model;	
      }
      

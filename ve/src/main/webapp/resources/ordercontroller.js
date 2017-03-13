@@ -14,11 +14,22 @@ cartApp.controller("addToCartCtrl",function($scope, $http){
         
 	$scope.removeItemFromCart=function(itemId){
 			alert('Remove item Called')
-			$http.put('http://localhost:9080/ve/removeItem/'+itemId).success(function (data) {
+			$http.put('http://localhost:9086/ve/removeItem/'+itemId).success(function (data) {
 			     $scope.refreshCartItems();
 	   });
 	};
 	
+	$scope.increaseQuantity=function(itemId){
+		$http.get('http://localhost:9086/ve/increaseQuantity/'+itemId).success(function (data) {
+			$scope.refreshCartItems();
+		});
+	};
+	
+	$scope.decreaseQuantity=function(itemId){
+		$http.get('http://localhost:9086/ve/decreaseQuantity/'+itemId).success(function (data) {
+			$scope.refreshCartItems();
+		});
+	};
 	
 	$scope.GrandTotalOfItems= function() {
     	var grandTotal=0;
@@ -29,8 +40,9 @@ cartApp.controller("addToCartCtrl",function($scope, $http){
     };
     
     $scope.refreshCartItems= function() {
-		$http.get('http://localhost:9080/ve/refreshCart/'+$scope.cartId).success(function (data){  
+		$http.get('http://localhost:9086/ve/refreshCart/'+$scope.cartId).success(function (data){  
 		  $scope.cart=data;
+		  $scope.GrandTotalOfItems();
 		 });
 		}; 
 

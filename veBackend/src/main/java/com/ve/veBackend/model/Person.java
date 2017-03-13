@@ -12,7 +12,7 @@ import javax.persistence.OneToOne;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
-
+import org.hibernate.validator.constraints.Email;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -25,6 +25,7 @@ public class Person implements Serializable {
 	@NotEmpty(message="Name field can't be empty")
 	private String name;
 	
+	@Email
 	private String email;
 	
 	@Size(min=10,max=10,message="Mobile No. has to be of 10 digits")
